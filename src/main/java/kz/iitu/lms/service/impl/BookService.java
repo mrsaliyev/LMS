@@ -7,15 +7,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.awt.*;
+import java.util.Scanner;
 
 @Service
 public class BookService implements IBookService {
+    Scanner in = new Scanner(System.in);
+
     @Autowired
     private BookRepository bookRepo;
 
     @Override
-    public Book create(Book o) {
-        return bookRepo.save(o);
+    public Book create() {
+        System.out.print("Enter name: ");
+        String name = in.next();
+        System.out.print("Enter Description: ");
+        String desc = in.next();
+
+        Book book = new Book(name, desc);
+
+        return bookRepo.save(book);
     }
 
     @Override

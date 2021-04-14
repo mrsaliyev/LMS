@@ -23,12 +23,9 @@ public class Book {
 
     public Book () {}
 
-    public Book(Long id, String name, String description, User author, Long authorId) {
-        this.id = id;
+    public Book(String name, String description) {
         this.name = name;
         this.description = description;
-        this.author = author;
-        this.authorId = authorId;
     }
 
     public Long getId() {

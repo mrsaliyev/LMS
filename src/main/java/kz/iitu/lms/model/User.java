@@ -15,8 +15,7 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String fullName, Date dateOfBirth) {
-        this.id = id;
+    public User(String fullName, Date dateOfBirth) {
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
     }

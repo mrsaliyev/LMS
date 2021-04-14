@@ -7,9 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.awt.*;
+import java.util.Scanner;
 
 @Service
 public class UserBooksService implements IUserBooksService{
+
+    Scanner in = new Scanner(System.in);
 
     @Autowired
     private UserBooksRepository userBooksRepo;
@@ -40,12 +43,16 @@ public class UserBooksService implements IUserBooksService{
     }
 
     @Override
-    public List<UserBooks> getAllByUser(Long userId) {
+    public List<UserBooks> getAllByUser() {
+        System.out.println("Enter user id");
+        long userId = in.nextLong();
         return userBooksRepo.getAllByUserId(userId);
     }
 
     @Override
-    public List<UserBooks> getAllByBook(Long bookId) {
+    public List<UserBooks> getAllByBook() {
+        System.out.println("Enter the book id");
+        long bookId = in.nextInt();
         return userBooksRepo.getAllByBookId(bookId);
     }
 }

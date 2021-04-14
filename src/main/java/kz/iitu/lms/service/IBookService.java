@@ -5,7 +5,7 @@ import kz.iitu.lms.model.Book;
 import java.awt.*;
 
 public interface IBookService {
-    Book create(Book o);
+    Book create();
     Book update(Book o);
     void delete(Long o);
     Book getById(Long id);
