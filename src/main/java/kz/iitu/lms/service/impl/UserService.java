@@ -30,6 +30,11 @@ public class UserService implements IUserService {
     }
 
     @Override
+    public User create(User o) {
+        return userRepo.save(o);
+    }
+
+    @Override
     public User update(User o) {
         return userRepo.save(o);
     }

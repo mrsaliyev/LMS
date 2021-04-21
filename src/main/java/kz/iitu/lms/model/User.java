@@ -12,7 +12,7 @@ public class User {
     private String fullName;
     private Date dateOfBirth;
 
-    public User() {
+    public User(String name, String date) {
     }
 
     public User(String fullName, Date dateOfBirth) {
